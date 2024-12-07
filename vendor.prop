@@ -1,0 +1,15 @@
+# RIL properties
+persist.vendor.radio.wait_for_pbm=1
+persist.vendor.radio.smd_timeout_delay=200
+persist.vendor.radio.smd_retry_delay=100
+persist.vendor.radio.smd_retry_count=50
+
+# QMI properties
+persist.vendor.data.qmi.retry_count=5
+persist.vendor.data.qmi.retry_delay=1000
+
+# Debug properties
+persist.vendor.radio.debug.smd=1
+persist.vendor.data.debug.enable=1
+
+# Modem configuration

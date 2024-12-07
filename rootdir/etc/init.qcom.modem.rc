@@ -1,0 +1,25 @@
+on boot
+    # Create SMD device nodes
+    mkdir /dev/smd 0750 root system
+    chmod 0660 /dev/smd
+    chown root system /dev/smd
+    
+    # Create DATA5_CNTL node
+    mkdir /dev/socket/qmux_radio 0770 radio radio
+    chmod 2770 /dev/socket/qmux_radio
+    
+    # Set permissions for SMD devices
+    chmod 0660 /dev/smd5
+    chown radio radio /dev/smd5
+    
+on property:sys.boot_completed=1
+    # Initialize modem
+    write /sys/class/smd/open_timeout 2500
+    write /sys/class/smd/retry_count 50
+    
+service qmuxd /system/vendor/bin/qmuxd
+    class main
+    user radio
+    group radio audio bluetooth gps nfc qcom_diag
+    
+service irsc_util /system/vendor/bin/irsc_util "/vendor/etc/sec_config"

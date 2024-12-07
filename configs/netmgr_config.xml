@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list name="netmgr_config">
+    <config name="default">
+        <smd_config>
+            <base_channels>
+                <channel name="DATA5_CNTL" 
+                        retry_count="50"
+                        retry_timeout="100"
+                        init_delay="200"/>
+            </base_channels>
+        </smd_config>
+        
+        <data_retry_config>
+            <max_retries>5</max_retries>
+            <retry_timeout>1000</retry_timeout>
+        </data_retry_config>
+    </config>
+</list>

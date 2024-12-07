@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list name="qmi_config">
+   <device name="msm8992">
+       <library name="libqmi_cci.so"/>
+       <library name="libqmi_common_so.so"/>
+       
+       <device name="DATA5_CNTL">
+           <instance name="rmnet_data5"/>
+           <instance name="rmnet5"/>
+       </device>
+       
+       <control_ports_config>
+           <config initial_open_time_out="2500" 
+                   retry_interval="1000"
+                   max_retries="5"/>
+       </control_ports_config>
+   </device>
+</list>
+
